@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Supply Chain Delay Proof (v1)</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="top">
+    <div>
+      <h1>Delay Visibility — Proof v1</h1>
+      <p class="muted">Reads a CSV export and flags late shipments. No integrations yet.</p>
+    </div>
+    <div class="pillRow">
+      <span class="pill" id="asOf">As of: —</span>
+      <span class="pill" id="totalCount">Shipments: —</span>
+      <span class="pill bad" id="lateCount">Late: —</span>
+    </div>
+  </header>
+
+  <main class="grid">
+    <section class="card">
+      <h2>Top Late Shipments</h2>
+      <p class="muted">Sorted by days late (highest first).</p>
+      <div class="tableWrap">
+        <table id="lateTable">
+          <thead>
+            <tr>
+              <th>Shipment</th>
+              <th>PO</th>
+              <th>Supplier</th>
+              <th>Carrier</th>
+              <th>Status</th>
+              <th>Planned</th>
+              <th>Actual</th>
+              <th>Days Late</th>
+              <th>Handoff</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Delay Summary</h2>
+      <div class="kpis">
+        <div class="kpi">
+          <div class="kpiLabel">On-time %</div>
+          <div class="kpiValue" id="onTimePct">—</div>
+        </div>
+        <div class="kpi">
+          <div class="kpiLabel">Avg Days Late</div>
+          <div class="kpiValue" id="avgLate">—</div>
+        </div>
+        <div class="kpi">
+          <div class="kpiLabel">Worst Supplier</div>
+          <div class="kpiValue" id="worstSupplier">—</div>
+        </div>
+        <div class="kpi">
+          <div class="kpiLabel">Worst Handoff</div>
+          <div class="kpiValue" id="worstHandoff">—</div>
+        </div>
+      </div>
+
+      <h3>Late by Supplier</h3>
+      <ul id="lateBySupplier" class="list"></ul>
+
+      <h3>Late by Handoff Point</h3>
+      <ul id="lateByHandoff" class="list"></ul>
+    </section>
+  </main>
+
+  <footer class="foot">
+    Proof v1 = CSV → metrics → visible bottleneck in &lt;60 seconds.
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
