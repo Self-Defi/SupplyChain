@@ -1,0 +1,6 @@
+shipment_id,po,carrier,supplier,origin,destination,status,planned_delivery,actual_delivery,handoff_point
+SHP-1001,PO-7781,FedEx,SupplierA,LA,PHX,In Transit,2026-01-01,,Carrier
+SHP-1002,PO-7782,UPS,SupplierB,SF,PHX,Delivered,2025-12-29,2026-01-02,Warehouse
+SHP-1003,PO-7783,DHL,SupplierA,DEN,PHX,Delayed,2026-01-01,,Customs
+SHP-1004,PO-7784,FedEx,SupplierC,SEA,PHX,Delivered,2026-01-03,2026-01-03,Carrier
+SHP-1005,PO-7785,UPS,SupplierB,AUS,PHX,Delayed,2026-01-02,,Warehouse
